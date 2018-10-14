@@ -7,17 +7,14 @@ import (
 	"github.com/gen2brain/beeep"
 )
 
-var (
-	flagWorkDuration  = flag.Duration("w", 25*time.Minute, "work duration")
-	flagBreakDuration = flag.Duration("b", 5*time.Minute, "break duration")
-)
-
 func main() {
+	w := flag.Duration("w", 25*time.Minute, "work duration")
+	b := flag.Duration("b", 5*time.Minute, "break duration")
 	flag.Parse()
 	for {
 		beeep.Alert("pomodoro", "Begin Pomodoro session", "")
-		time.Sleep(*flagWorkDuration)
+		time.Sleep(*w)
 		beeep.Alert("pomodoro", "Time for a break", "")
-		time.Sleep(*flagBreakDuration)
+		time.Sleep(*b)
 	}
 }
