@@ -1,1 +1,8 @@
 Command pomodoro is a simple cli pomodoro timer.
+
+$ pomodoro -h
+Usage of pomodoro:
+  -b duration
+    	break duration (default 5m0s)
+  -w duration
+    	work duration (default 25m0s)
